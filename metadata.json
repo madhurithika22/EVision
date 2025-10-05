@@ -1,6 +1,6 @@
 {
-  "name": "EV Digital Twin Dashboard",
-  "description": "A multi-user dashboard for EV owners, mechanics, and station operators, featuring real-time data, predictive insights, and community interaction. Built as a React SPA with Tailwind CSS.",
+  "name": "EVision",
+  "description": "EVision: See your EV like never before. A multi-user dashboard for EV owners, mechanics, and station operators, featuring real-time data, predictive insights, and community interaction.",
   "requestFramePermissions": [
     "camera"
   ]

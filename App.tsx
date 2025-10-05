@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, createContext, useContext, useCallback } from 'react';
 import type { FC, ReactNode } from 'react';
 
@@ -1164,21 +1163,25 @@ const AuthPage: FC = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-900 bg-gradient-to-br from-gray-900 via-gray-900 to-cyan-900/30 p-4">
+        <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 bg-gradient-to-br from-gray-900 via-gray-900 to-cyan-900/30 p-4">
+            <div className="text-center mb-8">
+                <h1 className="text-5xl font-bold text-cyan-400 mb-2">EVision</h1>
+                <p className="text-lg text-gray-400 italic">“See your EV like never before.”</p>
+            </div>
             <Card className="w-full max-w-md" isHoverable={false}>
-                <h2 className="text-3xl font-bold text-center text-cyan-400 mb-2">{isLoginView ? 'Welcome Back' : 'Create Account'}</h2>
-                <p className="text-center text-gray-400 mb-8">{isLoginView ? 'Sign in to your EV Twin dashboard' : 'Join the future of mobility'}</p>
                 {error && <p className="bg-red-500/20 text-red-300 p-3 rounded-lg mb-4">{error}</p>}
                 {success && <p className="bg-green-500/20 text-green-300 p-3 rounded-lg mb-4">{success}</p>}
 
                 {isLoginView ? (
                     <form onSubmit={handleLoginSubmit} className="space-y-4">
+                        <h2 className="text-2xl font-bold text-center text-white pb-2">Sign In</h2>
                         <AuthInput type="email" placeholder="Email (e.g., aryan@demo.com)" value={email} onChange={e => setEmail(e.target.value)} />
                         <AuthInput type="password" placeholder="Password (hint: password)" value={password} onChange={e => setPassword(e.target.value)} />
                         <button type="submit" className="w-full bg-cyan-500 text-white font-bold py-3 rounded-lg hover:bg-cyan-600 transition-colors duration-300">Sign In</button>
                     </form>
                 ) : (
                     <form onSubmit={handleSignUpSubmit} className="space-y-4">
+                        <h2 className="text-2xl font-bold text-center text-white pb-2">Create Account</h2>
                          <div className="relative">
                             <select value={role} onChange={e => setRole(e.target.value as any)} className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 appearance-none">
                                 <option value="ev_user">I am an EV User</option>
